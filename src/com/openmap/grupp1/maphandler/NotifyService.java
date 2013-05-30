@@ -1,4 +1,10 @@
 package com.openmap.grupp1.maphandler;
+/*
+ * Notifycenter
+ * Used the old version due to the need of high level of api for the new one
+ * Is called on from NearEventNotifier, 
+ */
+
 
 import com.openmap.grupp1.MainActivity;
 
@@ -13,11 +19,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.IBinder;
-
-/**
- * Used the old version due to the need of high level of api for the new one
- * Is called on from NearEventNotifier, 
- */
 
 public class NotifyService extends Service {
 
@@ -45,7 +46,7 @@ public class NotifyService extends Service {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		//Gets the title and description of the event which the user gets notified about
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE); 
-		String notificationTitle = settings.getString("Notification", "Error when receiving title");
+		String notificationTitle = " " + settings.getString("Notification", "Error when receiving title");
 		String notificationText = settings.getString("Notificationdetails", "Error when receiving description");
 
 		//Creates a new IntentFilter and adds the NotifyServiceAction to it
@@ -58,7 +59,7 @@ public class NotifyService extends Service {
 		notificationManager =
 				(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		//CHANGE THIS PICTURE
-		myNotification = new Notification(com.openmap.grupp1.R.drawable.logo,
+		myNotification = new Notification(R.drawable.alert_dark_frame,
 				"You are near " + notificationTitle,
 				System.currentTimeMillis());
 		Context context = getApplicationContext();
@@ -104,9 +105,7 @@ public class NotifyService extends Service {
 		return null;
 	}
 
-	/**
-	 * Defines the receiver for the notification
-	 */
+	//Defines the receiver for the notification
 	public class NotifyServiceReceiver extends BroadcastReceiver{
 
 		@Override

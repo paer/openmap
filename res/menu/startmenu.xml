@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#9999CC">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<item android:id="@+id/btn_clear"
-android:icon="@android:drawable/ic_menu_close_clear_cancel"
+<item android:id="@+id/btn_select"
+android:icon="@android:drawable/star_big_on"
 android:showAsAction="ifRoom|withText"
-android:title="@string/menu_clear"/>
+android:title="@string/menu_select"/>
 
 <item android:id="@+id/btn_settings"
 android:icon="@android:drawable/ic_menu_preferences"
@@ -16,6 +15,5 @@ android:title="@string/menu_settings"/>
 android:icon="@android:drawable/ic_menu_search"
 android:showAsAction="ifRoom|withText"
 android:title="@string/menu_search"/>
-
 
 </menu>

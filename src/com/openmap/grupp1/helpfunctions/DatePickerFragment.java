@@ -5,15 +5,17 @@ import java.util.Calendar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
-/**
- * Dialog fragment to be shown when the user wants to choose a date.
- */
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
 	public String date;
+
+	public DatePickerFragment(){
+	}
+
 
 
 	@Override
@@ -56,14 +58,8 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
 		this.dismiss();
 	}
 
-	/**
-	 * Interface to be implemented to be able to listen to the TimePickerFragment
-	 */
+	//Interface to be implemented to be able to listen to the TimePickerFragment
 	public interface DatePickerDialogListener {
-		/**
-		 * Called when the TimePickerFragment is dismissed
-		 * @param date The date which is chosen in the DatePickerFragment
-		 */
-		void onFinishDatePickerDialog(String date);
+		void onFinishDatePickerDialog(String inputText);
 	}
 }

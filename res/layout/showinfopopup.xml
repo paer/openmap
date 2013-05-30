@@ -2,7 +2,8 @@
     android:id="@+id/markerTitle"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#F1C40F" >
+    android:alpha="0.5"
+    android:background="#FFFFFF" >
 
     <LinearLayout
         android:id="@+id/linearlayout1"
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:onClick="showDatePickerDialog"
+                android:paddingLeft="15dp"
                 android:text="@string/starts"
                 android:textSize="14sp" />
 
@@ -57,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:onClick="showTimePickerDialog"
+                android:paddingLeft="15dp"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -72,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:onClick="showDatePickerDialog"
+                android:paddingLeft="15dp"
                 android:text="@string/ends"
                 android:textSize="14sp" />
 
@@ -81,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:onClick="showTimePickerDialog"
+                android:paddingLeft="15dp"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
@@ -88,7 +93,8 @@
     <TextView
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/buttons"
         android:layout_below="@+id/linearlayout2"
         android:ems="10"
         android:gravity="top"
@@ -99,16 +105,14 @@
         android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtDescription"
-        android:orientation="horizontal"
-        android:padding="5dp" >
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/CancelB"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#F39C12"
             android:text="@string/cancel" />
 
         <Button
@@ -116,7 +120,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#F39C12"
             android:text="@string/imHere" />
     </LinearLayout>
 
